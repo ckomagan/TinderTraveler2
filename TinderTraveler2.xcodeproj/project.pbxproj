@@ -7,12 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E01EFAC01B4F0CC900841BCE /* HGRAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E0BA850A1B4F01BE000C1EEA /* HGRAppDelegate.m */; };
+		E07F2AD11B554ECE001A7F6E /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E07F2AD01B554ECE001A7F6E /* FBSDKCoreKit.framework */; };
+		E07F2AD31B554ED8001A7F6E /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E07F2AD21B554ED8001A7F6E /* FBSDKLoginKit.framework */; };
+		E07F2AD51B556296001A7F6E /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E07F2AD41B556296001A7F6E /* Bolts.framework */; };
 		E0BA84FB1B4F01BE000C1EEA /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E0BA84FA1B4F01BE000C1EEA /* Foundation.framework */; };
 		E0BA84FD1B4F01BE000C1EEA /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E0BA84FC1B4F01BE000C1EEA /* CoreGraphics.framework */; };
 		E0BA84FF1B4F01BE000C1EEA /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E0BA84FE1B4F01BE000C1EEA /* UIKit.framework */; };
 		E0BA85051B4F01BE000C1EEA /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = E0BA85031B4F01BE000C1EEA /* InfoPlist.strings */; };
 		E0BA85071B4F01BE000C1EEA /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E0BA85061B4F01BE000C1EEA /* main.m */; };
-		E0BA850B1B4F01BE000C1EEA /* HGRAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E0BA850A1B4F01BE000C1EEA /* HGRAppDelegate.m */; };
 		E0BA850E1B4F01BE000C1EEA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E0BA850C1B4F01BE000C1EEA /* Main.storyboard */; };
 		E0BA85111B4F01BE000C1EEA /* HGRViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E0BA85101B4F01BE000C1EEA /* HGRViewController.m */; };
 		E0BA85131B4F01BE000C1EEA /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E0BA85121B4F01BE000C1EEA /* Images.xcassets */; };
@@ -21,6 +24,38 @@
 		E0BA851C1B4F01BE000C1EEA /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E0BA84FE1B4F01BE000C1EEA /* UIKit.framework */; };
 		E0BA85241B4F01BE000C1EEA /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = E0BA85221B4F01BE000C1EEA /* InfoPlist.strings */; };
 		E0BA85261B4F01BE000C1EEA /* TinderTraveler2Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = E0BA85251B4F01BE000C1EEA /* TinderTraveler2Tests.m */; };
+		E0BA853D1B4F0259000C1EEA /* SignInController.m in Sources */ = {isa = PBXBuildFile; fileRef = E0BA85321B4F0259000C1EEA /* SignInController.m */; };
+		E0BA853E1B4F0259000C1EEA /* SettingsController.m in Sources */ = {isa = PBXBuildFile; fileRef = E0BA85341B4F0259000C1EEA /* SettingsController.m */; };
+		E0BA853F1B4F0259000C1EEA /* MatchPageController.m in Sources */ = {isa = PBXBuildFile; fileRef = E0BA85361B4F0259000C1EEA /* MatchPageController.m */; };
+		E0BA85401B4F0259000C1EEA /* MatchAlertController.m in Sources */ = {isa = PBXBuildFile; fileRef = E0BA85381B4F0259000C1EEA /* MatchAlertController.m */; };
+		E0BA85411B4F0259000C1EEA /* HomePageController.m in Sources */ = {isa = PBXBuildFile; fileRef = E0BA853A1B4F0259000C1EEA /* HomePageController.m */; };
+		E0BA85421B4F0259000C1EEA /* BucketPageController.m in Sources */ = {isa = PBXBuildFile; fileRef = E0BA853C1B4F0259000C1EEA /* BucketPageController.m */; };
+		E0BA85441B4F026B000C1EEA /* MatchAlert.xib in Resources */ = {isa = PBXBuildFile; fileRef = E0BA85431B4F026B000C1EEA /* MatchAlert.xib */; };
+		E0BA85671B4F02FB000C1EEA /* MDCViewState.m in Sources */ = {isa = PBXBuildFile; fileRef = E0BA85471B4F02FB000C1EEA /* MDCViewState.m */; };
+		E0BA85681B4F02FB000C1EEA /* MDCSwipeOptions.m in Sources */ = {isa = PBXBuildFile; fileRef = E0BA85491B4F02FB000C1EEA /* MDCSwipeOptions.m */; };
+		E0BA85691B4F02FB000C1EEA /* UIView+MDCBorderedLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = E0BA854B1B4F02FB000C1EEA /* UIView+MDCBorderedLabel.m */; };
+		E0BA856A1B4F02FB000C1EEA /* MDCPanState.m in Sources */ = {isa = PBXBuildFile; fileRef = E0BA854D1B4F02FB000C1EEA /* MDCPanState.m */; };
+		E0BA856B1B4F02FB000C1EEA /* MDCSwipeToChooseViewOptions.m in Sources */ = {isa = PBXBuildFile; fileRef = E0BA854F1B4F02FB000C1EEA /* MDCSwipeToChooseViewOptions.m */; };
+		E0BA856C1B4F02FB000C1EEA /* MDCSwipeToChooseView.m in Sources */ = {isa = PBXBuildFile; fileRef = E0BA85521B4F02FB000C1EEA /* MDCSwipeToChooseView.m */; };
+		E0BA856D1B4F02FB000C1EEA /* MDCSwipeResult.m in Sources */ = {isa = PBXBuildFile; fileRef = E0BA85561B4F02FB000C1EEA /* MDCSwipeResult.m */; };
+		E0BA856E1B4F02FB000C1EEA /* UIView+MDCSwipeToChoose.m in Sources */ = {isa = PBXBuildFile; fileRef = E0BA85581B4F02FB000C1EEA /* UIView+MDCSwipeToChoose.m */; };
+		E0BA856F1B4F02FB000C1EEA /* UIColor+MDCRGB8Bit.m in Sources */ = {isa = PBXBuildFile; fileRef = E0BA855A1B4F02FB000C1EEA /* UIColor+MDCRGB8Bit.m */; };
+		E0BA85701B4F02FB000C1EEA /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E0BA855C1B4F02FB000C1EEA /* AppDelegate.m */; };
+		E0BA85711B4F02FB000C1EEA /* ImageLabelView.m in Sources */ = {isa = PBXBuildFile; fileRef = E0BA855E1B4F02FB000C1EEA /* ImageLabelView.m */; };
+		E0BA85721B4F02FB000C1EEA /* ChoosePersonViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E0BA85601B4F02FB000C1EEA /* ChoosePersonViewController.m */; };
+		E0BA85731B4F02FB000C1EEA /* Person.m in Sources */ = {isa = PBXBuildFile; fileRef = E0BA85621B4F02FB000C1EEA /* Person.m */; };
+		E0BA85741B4F02FB000C1EEA /* ChoosePersonView.m in Sources */ = {isa = PBXBuildFile; fileRef = E0BA85641B4F02FB000C1EEA /* ChoosePersonView.m */; };
+		E0BA85751B4F02FB000C1EEA /* MDCGeometry.m in Sources */ = {isa = PBXBuildFile; fileRef = E0BA85661B4F02FB000C1EEA /* MDCGeometry.m */; };
+		E0BA857F1B4F0918000C1EEA /* spark.jpg in Resources */ = {isa = PBXBuildFile; fileRef = E0BA85761B4F0918000C1EEA /* spark.jpg */; };
+		E0BA85801B4F0918000C1EEA /* chat.png in Resources */ = {isa = PBXBuildFile; fileRef = E0BA85771B4F0918000C1EEA /* chat.png */; };
+		E0BA85811B4F0918000C1EEA /* settings.png in Resources */ = {isa = PBXBuildFile; fileRef = E0BA85781B4F0918000C1EEA /* settings.png */; };
+		E0BA85821B4F0918000C1EEA /* NoImage.jpg in Resources */ = {isa = PBXBuildFile; fileRef = E0BA85791B4F0918000C1EEA /* NoImage.jpg */; };
+		E0BA85831B4F0918000C1EEA /* nopebutton.png in Resources */ = {isa = PBXBuildFile; fileRef = E0BA857A1B4F0918000C1EEA /* nopebutton.png */; };
+		E0BA85841B4F0918000C1EEA /* likebutton.png in Resources */ = {isa = PBXBuildFile; fileRef = E0BA857B1B4F0918000C1EEA /* likebutton.png */; };
+		E0BA85851B4F0918000C1EEA /* YesImage.png in Resources */ = {isa = PBXBuildFile; fileRef = E0BA857C1B4F0918000C1EEA /* YesImage.png */; };
+		E0BA85861B4F0918000C1EEA /* transfer.jpg in Resources */ = {isa = PBXBuildFile; fileRef = E0BA857D1B4F0918000C1EEA /* transfer.jpg */; };
+		E0BA85871B4F0918000C1EEA /* chan_cusco_train.jpg in Resources */ = {isa = PBXBuildFile; fileRef = E0BA857E1B4F0918000C1EEA /* chan_cusco_train.jpg */; };
+		E0C083E91B56F84200D3F63F /* SCSettings.m in Sources */ = {isa = PBXBuildFile; fileRef = E0C083E81B56F84200D3F63F /* SCSettings.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,6 +69,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		E07F2AD01B554ECE001A7F6E /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKCoreKit.framework; path = ../../../FacebookSDK/FBSDKCoreKit.framework; sourceTree = "<group>"; };
+		E07F2AD21B554ED8001A7F6E /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKLoginKit.framework; path = ../../../FacebookSDK/FBSDKLoginKit.framework; sourceTree = "<group>"; };
+		E07F2AD41B556296001A7F6E /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Bolts.framework; path = ../../../FacebookSDK/Bolts.framework; sourceTree = "<group>"; };
 		E0BA84F71B4F01BE000C1EEA /* TinderTraveler2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TinderTraveler2.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E0BA84FA1B4F01BE000C1EEA /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		E0BA84FC1B4F01BE000C1EEA /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -53,6 +91,63 @@
 		E0BA85211B4F01BE000C1EEA /* TinderTraveler2Tests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "TinderTraveler2Tests-Info.plist"; sourceTree = "<group>"; };
 		E0BA85231B4F01BE000C1EEA /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		E0BA85251B4F01BE000C1EEA /* TinderTraveler2Tests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TinderTraveler2Tests.m; sourceTree = "<group>"; };
+		E0BA85311B4F0259000C1EEA /* SignInController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SignInController.h; sourceTree = "<group>"; };
+		E0BA85321B4F0259000C1EEA /* SignInController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SignInController.m; sourceTree = "<group>"; };
+		E0BA85331B4F0259000C1EEA /* SettingsController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsController.h; sourceTree = "<group>"; };
+		E0BA85341B4F0259000C1EEA /* SettingsController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsController.m; sourceTree = "<group>"; };
+		E0BA85351B4F0259000C1EEA /* MatchPageController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MatchPageController.h; sourceTree = "<group>"; };
+		E0BA85361B4F0259000C1EEA /* MatchPageController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MatchPageController.m; sourceTree = "<group>"; };
+		E0BA85371B4F0259000C1EEA /* MatchAlertController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MatchAlertController.h; sourceTree = "<group>"; };
+		E0BA85381B4F0259000C1EEA /* MatchAlertController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MatchAlertController.m; sourceTree = "<group>"; };
+		E0BA85391B4F0259000C1EEA /* HomePageController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomePageController.h; sourceTree = "<group>"; };
+		E0BA853A1B4F0259000C1EEA /* HomePageController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomePageController.m; sourceTree = "<group>"; };
+		E0BA853B1B4F0259000C1EEA /* BucketPageController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BucketPageController.h; sourceTree = "<group>"; };
+		E0BA853C1B4F0259000C1EEA /* BucketPageController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BucketPageController.m; sourceTree = "<group>"; };
+		E0BA85431B4F026B000C1EEA /* MatchAlert.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MatchAlert.xib; sourceTree = "<group>"; };
+		E0BA85461B4F02FB000C1EEA /* MDCViewState.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MDCViewState.h; sourceTree = "<group>"; };
+		E0BA85471B4F02FB000C1EEA /* MDCViewState.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MDCViewState.m; sourceTree = "<group>"; };
+		E0BA85481B4F02FB000C1EEA /* MDCSwipeOptions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MDCSwipeOptions.h; sourceTree = "<group>"; };
+		E0BA85491B4F02FB000C1EEA /* MDCSwipeOptions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MDCSwipeOptions.m; sourceTree = "<group>"; };
+		E0BA854A1B4F02FB000C1EEA /* UIView+MDCBorderedLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+MDCBorderedLabel.h"; sourceTree = "<group>"; };
+		E0BA854B1B4F02FB000C1EEA /* UIView+MDCBorderedLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+MDCBorderedLabel.m"; sourceTree = "<group>"; };
+		E0BA854C1B4F02FB000C1EEA /* MDCPanState.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MDCPanState.h; sourceTree = "<group>"; };
+		E0BA854D1B4F02FB000C1EEA /* MDCPanState.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MDCPanState.m; sourceTree = "<group>"; };
+		E0BA854E1B4F02FB000C1EEA /* MDCSwipeToChooseViewOptions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MDCSwipeToChooseViewOptions.h; sourceTree = "<group>"; };
+		E0BA854F1B4F02FB000C1EEA /* MDCSwipeToChooseViewOptions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MDCSwipeToChooseViewOptions.m; sourceTree = "<group>"; };
+		E0BA85501B4F02FB000C1EEA /* MDCSwipeToChooseDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MDCSwipeToChooseDelegate.h; sourceTree = "<group>"; };
+		E0BA85511B4F02FB000C1EEA /* MDCSwipeToChooseView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MDCSwipeToChooseView.h; sourceTree = "<group>"; };
+		E0BA85521B4F02FB000C1EEA /* MDCSwipeToChooseView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MDCSwipeToChooseView.m; sourceTree = "<group>"; };
+		E0BA85531B4F02FB000C1EEA /* MDCSwipeToChoose.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MDCSwipeToChoose.h; sourceTree = "<group>"; };
+		E0BA85541B4F02FB000C1EEA /* MDCSwipeDirection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MDCSwipeDirection.h; sourceTree = "<group>"; };
+		E0BA85551B4F02FB000C1EEA /* MDCSwipeResult.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MDCSwipeResult.h; sourceTree = "<group>"; };
+		E0BA85561B4F02FB000C1EEA /* MDCSwipeResult.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MDCSwipeResult.m; sourceTree = "<group>"; };
+		E0BA85571B4F02FB000C1EEA /* UIView+MDCSwipeToChoose.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+MDCSwipeToChoose.h"; sourceTree = "<group>"; };
+		E0BA85581B4F02FB000C1EEA /* UIView+MDCSwipeToChoose.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+MDCSwipeToChoose.m"; sourceTree = "<group>"; };
+		E0BA85591B4F02FB000C1EEA /* UIColor+MDCRGB8Bit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+MDCRGB8Bit.h"; sourceTree = "<group>"; };
+		E0BA855A1B4F02FB000C1EEA /* UIColor+MDCRGB8Bit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+MDCRGB8Bit.m"; sourceTree = "<group>"; };
+		E0BA855B1B4F02FB000C1EEA /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		E0BA855C1B4F02FB000C1EEA /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		E0BA855D1B4F02FB000C1EEA /* ImageLabelView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageLabelView.h; sourceTree = "<group>"; };
+		E0BA855E1B4F02FB000C1EEA /* ImageLabelView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageLabelView.m; sourceTree = "<group>"; };
+		E0BA855F1B4F02FB000C1EEA /* ChoosePersonViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChoosePersonViewController.h; sourceTree = "<group>"; };
+		E0BA85601B4F02FB000C1EEA /* ChoosePersonViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChoosePersonViewController.m; sourceTree = "<group>"; };
+		E0BA85611B4F02FB000C1EEA /* Person.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Person.h; sourceTree = "<group>"; };
+		E0BA85621B4F02FB000C1EEA /* Person.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Person.m; sourceTree = "<group>"; };
+		E0BA85631B4F02FB000C1EEA /* ChoosePersonView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChoosePersonView.h; sourceTree = "<group>"; };
+		E0BA85641B4F02FB000C1EEA /* ChoosePersonView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChoosePersonView.m; sourceTree = "<group>"; };
+		E0BA85651B4F02FB000C1EEA /* MDCGeometry.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MDCGeometry.h; sourceTree = "<group>"; };
+		E0BA85661B4F02FB000C1EEA /* MDCGeometry.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MDCGeometry.m; sourceTree = "<group>"; };
+		E0BA85761B4F0918000C1EEA /* spark.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = spark.jpg; sourceTree = "<group>"; };
+		E0BA85771B4F0918000C1EEA /* chat.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = chat.png; sourceTree = "<group>"; };
+		E0BA85781B4F0918000C1EEA /* settings.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = settings.png; sourceTree = "<group>"; };
+		E0BA85791B4F0918000C1EEA /* NoImage.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = NoImage.jpg; sourceTree = "<group>"; };
+		E0BA857A1B4F0918000C1EEA /* nopebutton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = nopebutton.png; sourceTree = "<group>"; };
+		E0BA857B1B4F0918000C1EEA /* likebutton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = likebutton.png; sourceTree = "<group>"; };
+		E0BA857C1B4F0918000C1EEA /* YesImage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = YesImage.png; sourceTree = "<group>"; };
+		E0BA857D1B4F0918000C1EEA /* transfer.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = transfer.jpg; sourceTree = "<group>"; };
+		E0BA857E1B4F0918000C1EEA /* chan_cusco_train.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = chan_cusco_train.jpg; sourceTree = "<group>"; };
+		E0C083E71B56F84200D3F63F /* SCSettings.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCSettings.h; sourceTree = "<group>"; };
+		E0C083E81B56F84200D3F63F /* SCSettings.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCSettings.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,6 +156,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				E0BA84FD1B4F01BE000C1EEA /* CoreGraphics.framework in Frameworks */,
+				E07F2AD11B554ECE001A7F6E /* FBSDKCoreKit.framework in Frameworks */,
+				E07F2AD31B554ED8001A7F6E /* FBSDKLoginKit.framework in Frameworks */,
+				E07F2AD51B556296001A7F6E /* Bolts.framework in Frameworks */,
 				E0BA84FF1B4F01BE000C1EEA /* UIKit.framework in Frameworks */,
 				E0BA84FB1B4F01BE000C1EEA /* Foundation.framework in Frameworks */,
 			);
@@ -101,6 +199,9 @@
 		E0BA84F91B4F01BE000C1EEA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				E07F2AD41B556296001A7F6E /* Bolts.framework */,
+				E07F2AD21B554ED8001A7F6E /* FBSDKLoginKit.framework */,
+				E07F2AD01B554ECE001A7F6E /* FBSDKCoreKit.framework */,
 				E0BA84FA1B4F01BE000C1EEA /* Foundation.framework */,
 				E0BA84FC1B4F01BE000C1EEA /* CoreGraphics.framework */,
 				E0BA84FE1B4F01BE000C1EEA /* UIKit.framework */,
@@ -112,11 +213,27 @@
 		E0BA85001B4F01BE000C1EEA /* TinderTraveler2 */ = {
 			isa = PBXGroup;
 			children = (
+				E0C083E71B56F84200D3F63F /* SCSettings.h */,
+				E0C083E81B56F84200D3F63F /* SCSettings.m */,
+				E0BA85311B4F0259000C1EEA /* SignInController.h */,
+				E0BA85321B4F0259000C1EEA /* SignInController.m */,
+				E0BA85331B4F0259000C1EEA /* SettingsController.h */,
+				E0BA85341B4F0259000C1EEA /* SettingsController.m */,
+				E0BA85351B4F0259000C1EEA /* MatchPageController.h */,
+				E0BA85361B4F0259000C1EEA /* MatchPageController.m */,
+				E0BA85371B4F0259000C1EEA /* MatchAlertController.h */,
+				E0BA85381B4F0259000C1EEA /* MatchAlertController.m */,
+				E0BA85391B4F0259000C1EEA /* HomePageController.h */,
+				E0BA853A1B4F0259000C1EEA /* HomePageController.m */,
+				E0BA853B1B4F0259000C1EEA /* BucketPageController.h */,
+				E0BA853C1B4F0259000C1EEA /* BucketPageController.m */,
 				E0BA85091B4F01BE000C1EEA /* HGRAppDelegate.h */,
 				E0BA850A1B4F01BE000C1EEA /* HGRAppDelegate.m */,
 				E0BA850C1B4F01BE000C1EEA /* Main.storyboard */,
+				E0BA85431B4F026B000C1EEA /* MatchAlert.xib */,
 				E0BA850F1B4F01BE000C1EEA /* HGRViewController.h */,
 				E0BA85101B4F01BE000C1EEA /* HGRViewController.m */,
+				E0BA85061B4F01BE000C1EEA /* main.m */,
 				E0BA85121B4F01BE000C1EEA /* Images.xcassets */,
 				E0BA85011B4F01BE000C1EEA /* Supporting Files */,
 			);
@@ -126,9 +243,18 @@
 		E0BA85011B4F01BE000C1EEA /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				E0BA85451B4F02EB000C1EEA /* SwipeApp */,
+				E0BA85761B4F0918000C1EEA /* spark.jpg */,
+				E0BA85771B4F0918000C1EEA /* chat.png */,
+				E0BA85781B4F0918000C1EEA /* settings.png */,
+				E0BA85791B4F0918000C1EEA /* NoImage.jpg */,
+				E0BA857A1B4F0918000C1EEA /* nopebutton.png */,
+				E0BA857B1B4F0918000C1EEA /* likebutton.png */,
+				E0BA857C1B4F0918000C1EEA /* YesImage.png */,
+				E0BA857D1B4F0918000C1EEA /* transfer.jpg */,
+				E0BA857E1B4F0918000C1EEA /* chan_cusco_train.jpg */,
 				E0BA85021B4F01BE000C1EEA /* TinderTraveler2-Info.plist */,
 				E0BA85031B4F01BE000C1EEA /* InfoPlist.strings */,
-				E0BA85061B4F01BE000C1EEA /* main.m */,
 				E0BA85081B4F01BE000C1EEA /* TinderTraveler2-Prefix.pch */,
 			);
 			name = "Supporting Files";
@@ -150,6 +276,46 @@
 				E0BA85221B4F01BE000C1EEA /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		E0BA85451B4F02EB000C1EEA /* SwipeApp */ = {
+			isa = PBXGroup;
+			children = (
+				E0BA85461B4F02FB000C1EEA /* MDCViewState.h */,
+				E0BA85471B4F02FB000C1EEA /* MDCViewState.m */,
+				E0BA85481B4F02FB000C1EEA /* MDCSwipeOptions.h */,
+				E0BA85491B4F02FB000C1EEA /* MDCSwipeOptions.m */,
+				E0BA854A1B4F02FB000C1EEA /* UIView+MDCBorderedLabel.h */,
+				E0BA854B1B4F02FB000C1EEA /* UIView+MDCBorderedLabel.m */,
+				E0BA854C1B4F02FB000C1EEA /* MDCPanState.h */,
+				E0BA854D1B4F02FB000C1EEA /* MDCPanState.m */,
+				E0BA854E1B4F02FB000C1EEA /* MDCSwipeToChooseViewOptions.h */,
+				E0BA854F1B4F02FB000C1EEA /* MDCSwipeToChooseViewOptions.m */,
+				E0BA85501B4F02FB000C1EEA /* MDCSwipeToChooseDelegate.h */,
+				E0BA85511B4F02FB000C1EEA /* MDCSwipeToChooseView.h */,
+				E0BA85521B4F02FB000C1EEA /* MDCSwipeToChooseView.m */,
+				E0BA85531B4F02FB000C1EEA /* MDCSwipeToChoose.h */,
+				E0BA85541B4F02FB000C1EEA /* MDCSwipeDirection.h */,
+				E0BA85551B4F02FB000C1EEA /* MDCSwipeResult.h */,
+				E0BA85561B4F02FB000C1EEA /* MDCSwipeResult.m */,
+				E0BA85571B4F02FB000C1EEA /* UIView+MDCSwipeToChoose.h */,
+				E0BA85581B4F02FB000C1EEA /* UIView+MDCSwipeToChoose.m */,
+				E0BA85591B4F02FB000C1EEA /* UIColor+MDCRGB8Bit.h */,
+				E0BA855A1B4F02FB000C1EEA /* UIColor+MDCRGB8Bit.m */,
+				E0BA855B1B4F02FB000C1EEA /* AppDelegate.h */,
+				E0BA855C1B4F02FB000C1EEA /* AppDelegate.m */,
+				E0BA855D1B4F02FB000C1EEA /* ImageLabelView.h */,
+				E0BA855E1B4F02FB000C1EEA /* ImageLabelView.m */,
+				E0BA855F1B4F02FB000C1EEA /* ChoosePersonViewController.h */,
+				E0BA85601B4F02FB000C1EEA /* ChoosePersonViewController.m */,
+				E0BA85611B4F02FB000C1EEA /* Person.h */,
+				E0BA85621B4F02FB000C1EEA /* Person.m */,
+				E0BA85631B4F02FB000C1EEA /* ChoosePersonView.h */,
+				E0BA85641B4F02FB000C1EEA /* ChoosePersonView.m */,
+				E0BA85651B4F02FB000C1EEA /* MDCGeometry.h */,
+				E0BA85661B4F02FB000C1EEA /* MDCGeometry.m */,
+			);
+			name = SwipeApp;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -212,6 +378,7 @@
 			knownRegions = (
 				en,
 				Base,
+				he,
 			);
 			mainGroup = E0BA84EE1B4F01BE000C1EEA;
 			productRefGroup = E0BA84F81B4F01BE000C1EEA /* Products */;
@@ -229,9 +396,19 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E0BA85861B4F0918000C1EEA /* transfer.jpg in Resources */,
+				E0BA85841B4F0918000C1EEA /* likebutton.png in Resources */,
+				E0BA857F1B4F0918000C1EEA /* spark.jpg in Resources */,
+				E0BA85851B4F0918000C1EEA /* YesImage.png in Resources */,
+				E0BA85811B4F0918000C1EEA /* settings.png in Resources */,
+				E0BA85821B4F0918000C1EEA /* NoImage.jpg in Resources */,
+				E0BA85831B4F0918000C1EEA /* nopebutton.png in Resources */,
+				E0BA85441B4F026B000C1EEA /* MatchAlert.xib in Resources */,
+				E0BA85871B4F0918000C1EEA /* chan_cusco_train.jpg in Resources */,
 				E0BA85131B4F01BE000C1EEA /* Images.xcassets in Resources */,
 				E0BA85051B4F01BE000C1EEA /* InfoPlist.strings in Resources */,
 				E0BA850E1B4F01BE000C1EEA /* Main.storyboard in Resources */,
+				E0BA85801B4F0918000C1EEA /* chat.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -250,9 +427,31 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E0BA850B1B4F01BE000C1EEA /* HGRAppDelegate.m in Sources */,
+				E0BA85701B4F02FB000C1EEA /* AppDelegate.m in Sources */,
+				E0BA85421B4F0259000C1EEA /* BucketPageController.m in Sources */,
+				E0BA85731B4F02FB000C1EEA /* Person.m in Sources */,
+				E0BA85671B4F02FB000C1EEA /* MDCViewState.m in Sources */,
+				E0BA856C1B4F02FB000C1EEA /* MDCSwipeToChooseView.m in Sources */,
+				E0BA856F1B4F02FB000C1EEA /* UIColor+MDCRGB8Bit.m in Sources */,
+				E0BA85721B4F02FB000C1EEA /* ChoosePersonViewController.m in Sources */,
+				E0BA85711B4F02FB000C1EEA /* ImageLabelView.m in Sources */,
+				E0BA85751B4F02FB000C1EEA /* MDCGeometry.m in Sources */,
+				E0BA85401B4F0259000C1EEA /* MatchAlertController.m in Sources */,
+				E0BA856B1B4F02FB000C1EEA /* MDCSwipeToChooseViewOptions.m in Sources */,
+				E0C083E91B56F84200D3F63F /* SCSettings.m in Sources */,
+				E0BA856A1B4F02FB000C1EEA /* MDCPanState.m in Sources */,
+				E0BA856D1B4F02FB000C1EEA /* MDCSwipeResult.m in Sources */,
+				E0BA85411B4F0259000C1EEA /* HomePageController.m in Sources */,
+				E0BA853D1B4F0259000C1EEA /* SignInController.m in Sources */,
+				E0BA853E1B4F0259000C1EEA /* SettingsController.m in Sources */,
+				E01EFAC01B4F0CC900841BCE /* HGRAppDelegate.m in Sources */,
+				E0BA85741B4F02FB000C1EEA /* ChoosePersonView.m in Sources */,
+				E0BA85691B4F02FB000C1EEA /* UIView+MDCBorderedLabel.m in Sources */,
+				E0BA856E1B4F02FB000C1EEA /* UIView+MDCSwipeToChoose.m in Sources */,
 				E0BA85111B4F01BE000C1EEA /* HGRViewController.m in Sources */,
+				E0BA853F1B4F0259000C1EEA /* MatchPageController.m in Sources */,
 				E0BA85071B4F01BE000C1EEA /* main.m in Sources */,
+				E0BA85681B4F02FB000C1EEA /* MDCSwipeOptions.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -375,11 +574,21 @@
 		E0BA852A1B4F01BE000C1EEA /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(PROJECT_DIR)",
+					"/Users/chan_2001/facebook-ios-sdk/build",
+					"~/Documents/FacebookSDK",
+					/Users/chan_2001/Documents/FacebookSDK,
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "TinderTraveler2/TinderTraveler2-Prefix.pch";
+				HEADER_SEARCH_PATHS = "";
 				INFOPLIST_FILE = "TinderTraveler2/TinderTraveler2-Info.plist";
+				LIBRARY_SEARCH_PATHS = "$(PROJECT_DIR)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -388,11 +597,21 @@
 		E0BA852B1B4F01BE000C1EEA /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(PROJECT_DIR)",
+					"/Users/chan_2001/facebook-ios-sdk/build",
+					"~/Documents/FacebookSDK",
+					/Users/chan_2001/Documents/FacebookSDK,
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "TinderTraveler2/TinderTraveler2-Prefix.pch";
+				HEADER_SEARCH_PATHS = "";
 				INFOPLIST_FILE = "TinderTraveler2/TinderTraveler2-Info.plist";
+				LIBRARY_SEARCH_PATHS = "$(PROJECT_DIR)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -406,6 +625,7 @@
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
 					"$(DEVELOPER_FRAMEWORKS_DIR)",
+					/Users/chan_2001/Documents/FacebookSDK,
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "TinderTraveler2/TinderTraveler2-Prefix.pch";
@@ -428,6 +648,7 @@
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
 					"$(DEVELOPER_FRAMEWORKS_DIR)",
+					/Users/chan_2001/Documents/FacebookSDK,
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "TinderTraveler2/TinderTraveler2-Prefix.pch";
@@ -457,6 +678,7 @@
 				E0BA852B1B4F01BE000C1EEA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		E0BA852C1B4F01BE000C1EEA /* Build configuration list for PBXNativeTarget "TinderTraveler2Tests" */ = {
 			isa = XCConfigurationList;
@@ -465,6 +687,7 @@
 				E0BA852E1B4F01BE000C1EEA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

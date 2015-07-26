@@ -1,0 +1,242 @@
+//
+//  SignInController.c
+//  TinderTraveler
+//
+//  Created by Chan Komagan on 10/18/14.
+//  Copyright (c) 2014 Chan Komagan. All rights reserved.
+//
+
+#import "SignInController.h"
+#import "MatchPageController.h"
+#import "SCSettings.h"
+
+@implementation SignInController {
+BOOL _viewDidAppear;
+BOOL _viewIsVisible;
+}
+@synthesize nsURL;
+@synthesize responseData;
+NSDictionary *res;
+
+- (void) viewDidLoad {
+
+[super viewDidLoad];
+[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(observeProfileChange:) name:FBSDKProfileDidChangeNotification object:nil];
+[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(observeTokenChange:) name:FBSDKAccessTokenDidChangeNotification object:nil];
+self.loginButton.readPermissions = @[@"public_profile", @"user_friends"];
+if ([FBSDKAccessToken currentAccessToken]) {
+[self observeProfileChange:nil];
+}
+}
+
+- (void)viewDidAppear:(BOOL)animated
+{
+[super viewDidAppear:animated];
+
+SCSettings *settings = [SCSettings defaultSettings];
+if (_viewDidAppear) {
+_viewIsVisible = YES;
+
+// reset
+settings.shouldSkipLogin = NO;
+} else {
+if (settings.shouldSkipLogin || [FBSDKAccessToken currentAccessToken]) {
+//[self performSegueWithIdentifier:@"showMain" sender:nil];
+NSLog(@"settings:%@",settings);
+} else {
+_viewIsVisible = YES;
+}
+_viewDidAppear = YES;
+}
+}
+
+- (BOOL)application:(UIApplication *)application
+didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
+{
+// Override point for customization after application launch.
+[FBSDKLoginButton class];
+return YES;
+}
+
+- (void)loginViewFetchedUserInfo:(FBSDKLoginButton *)loginView
+{
+if ([FBSDKAccessToken currentAccessToken])
+{
+NSLog(@"Token is available : %@",[[FBSDKAccessToken currentAccessToken]tokenString]);
+
+[[[FBSDKGraphRequest alloc] initWithGraphPath:@"me" parameters:@{@"fields": @"id, name, link, first_name, last_name, picture.type(large), email, birthday, bio ,location ,friends ,hometown , friendlists"}]
+startWithCompletionHandler:^(FBSDKGraphRequestConnection *connection, id result, NSError *error) {
+if (!error)
+{
+self.fbId = result[@"id"];
+self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
+self.window.backgroundColor = [UIColor whiteColor];
+[self.window makeKeyAndVisible];
+self.window.rootViewController = [MatchPageController new];
+
+NSLog(@"resultis:%@",result);
+}
+else
+{
+NSLog(@"Error %@",error);
+}
+}];
+
+}
+}
+
+// Implement the loginViewShowingLoggedInUser: delegate method to modify your app's UI for a logged-in user experience
+- (void)loginViewShowingLoggedInUser:(FBSDKLoginButton *)loginView{
+NSLog(@"User logged in");
+self.statusLabel.text = @"You're logged in";
+//[self performSegueWithIdentifier:@"HomePage" sender:self];
+}
+
+// Implement the loginViewShowingLoggedOutUser: delegate method to modify your app's UI for a logged-out user experience
+- (void)loginViewShowingLoggedOutUser:(FBSDKLoginButton *)loginView {
+NSLog(@"User logged out");
+self.profilePictureView.profileID = nil;
+self.nameLabel.text = @"";
+self.statusLabel.text = @"You're not logged in!";
+}
+
+-(void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+if ([[segue identifier] isEqualToString:@"MatchPage"]) {
+
+MatchPageController *matchPageView = segue.destinationViewController;
+matchPageView.fbId = self.fbId;
+matchPageView.emailId = self.emailId;
+matchPageView.userLocation = self.userLocation;
+matchPageView.userAge = self.userAge;
+matchPageView.userGender = self.userGender;
+//matchPageView.profilePictureView = user.profileID;
+}
+
+}
+
+-(void)createUser
+{
+//NSString *post = [NSString stringWithFormat:@"&fbId=%@&emailId=%@&location=%@&zip=%@&age=%@&gender=%@&mainphoto=%@&authtoken=%@", self.fbId, self.emailId, self.userLocation, self.userZip, self.userAge, self.userGender, NULL, NULL ];
+
+
+self.nsURL = @"http://www.komagan.com/TinderTraveler/index.php?format=json&operation=checkUser";
+//NSString *post = [NSString stringWithFormat:@"&fbId=%@&emailId=%@&location=%@&zip=%@&age=%@&gender=%@&mainphoto=%@&authtoken=%@", self.fbId, self.emailId, self.userLocation, self.userZip, self.userAge, self.userGender, NULL, NULL ];
+NSString *post = [NSString stringWithFormat:@"&fbId=%@&emailId=%@", self.fbId, self.emailId];
+
+NSData *postData = [post dataUsingEncoding:NSUTF8StringEncoding allowLossyConversion:YES];
+NSString *postLength = [NSString stringWithFormat:@"%d",[postData length]];
+
+
+self.nsURL = [self.nsURL stringByAppendingString:post];
+
+//NSLog(@"URL=%@",self.nsURL);
+
+self.responseData = [NSMutableData data];
+
+NSMutableURLRequest *aRequest = [NSMutableURLRequest requestWithURL:[NSURL URLWithString: self.nsURL]];
+
+[aRequest setHTTPMethod:@"POST"];
+[aRequest setValue:postLength forHTTPHeaderField:@"Content-Length"];
+[aRequest setValue:@"application/x-www-form-urlencoded" forHTTPHeaderField:@"Current-Type"];
+
+[[NSURLConnection alloc] initWithRequest:aRequest delegate:self];
+}
+
+- (void)connection:(NSURLConnection *)connection didReceiveResponse:(NSURLResponse *)response {
+[self.responseData setLength:0];
+}
+
+- (void)connection:(NSURLConnection *)connection didReceiveData:(NSData *)data {
+[self.responseData appendData:data];
+}
+
+- (void)connection:(NSURLConnection *)connection didFailWithError:(NSError *)error {
+self.responseData = nil;
+}
+
+- (void)connectionDidFinishLoading:(NSURLConnection *)connection
+{
+NSError *myError = nil;
+res = [NSJSONSerialization JSONObjectWithData:self.responseData options:NSJSONReadingMutableLeaves error:&myError];
+NSMutableArray *answers = [[NSMutableArray alloc] init];
+
+for(NSDictionary *res1 in res) {
+NSString *id = [res1 objectForKey:@"result"];
+NSLog(@"%@", id);
+}
+}
+
+- (void)fbDidLogout
+{
+NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+[defaults removeObjectForKey:@"FBAccessTokenKey"];
+[defaults removeObjectForKey:@"FBExpirationDateKey"];
+[defaults synchronize];
+
+//        Finding the Facebook Cookies and deleting them
+NSHTTPCookieStorage* cookies = [NSHTTPCookieStorage sharedHTTPCookieStorage];
+NSArray* facebookCookies = [cookies cookiesForURL:
+[NSURL URLWithString:@"http://login.facebook.com"]];
+for (NSHTTPCookie* cookie in facebookCookies) {
+[cookies deleteCookie:cookie];
+}
+
+}
+
+- (void)calculateAge
+{
+NSDate* now = [NSDate date];
+
+NSDateFormatter *dateFormat = [[NSDateFormatter alloc] init];
+[dateFormat setDateFormat:@"MM/dd/YYYY"];
+NSDate *date = [dateFormat dateFromString:self.userBirthDay];
+
+NSDateComponents* ageComponents = [[NSCalendar currentCalendar]
+components:NSYearCalendarUnit
+fromDate:date
+toDate:now
+options:0];
+self.userAge = [ageComponents year];
+}
+
+- (void)observeProfileChange:(NSNotification *)notfication {
+if ([FBSDKProfile currentProfile]) {
+NSString *title = [NSString stringWithFormat:@"continue as %@", [FBSDKProfile currentProfile].name];
+[self.continueButton setTitle:title forState:UIControlStateNormal];
+}
+}
+
+- (void)observeTokenChange:(NSNotification *)notfication {
+if (![FBSDKAccessToken currentAccessToken]) {
+[self.continueButton setTitle:@"continue as a guest" forState:UIControlStateNormal];
+} else {
+[self observeProfileChange:nil];
+}
+}
+
+- (void)loginButtonDidLogOut:(FBSDKLoginButton *)loginButton {
+if (_viewIsVisible) {
+[self performSegueWithIdentifier:@"continue" sender:self];
+}
+}
+
+- (void)loginButton:(FBSDKLoginButton *)loginButton didCompleteWithResult:(FBSDKLoginManagerLoginResult *)result error:(NSError *)error {
+if (error) {
+NSLog(@"Unexpected login error: %@", error);
+NSString *alertMessage = error.userInfo[FBSDKErrorLocalizedDescriptionKey] ?: @"There was a problem logging in. Please try again later.";
+NSString *alertTitle = error.userInfo[FBSDKErrorLocalizedTitleKey] ?: @"Oops";
+[[[UIAlertView alloc] initWithTitle:alertTitle
+message:alertMessage
+delegate:nil
+cancelButtonTitle:@"OK"
+otherButtonTitles:nil] show];
+} else {
+if (_viewIsVisible) {
+[self performSegueWithIdentifier:@"showMain" sender:self];
+}
+}
+}
+
+
+@end
