@@ -34,6 +34,8 @@ static const CGFloat ChoosePersonViewImageLabelWidth = 42.f;
 @property (nonatomic, strong) ImageLabelView *cameraImageLabelView;
 @property (nonatomic, strong) ImageLabelView *interestsImageLabelView;
 @property (nonatomic, strong) ImageLabelView *friendsImageLabelView;
+@property (nonatomic, strong) UILabel *statusLabel;
+
 @end
 
 @implementation ChoosePersonView
@@ -77,15 +79,16 @@ static const CGFloat ChoosePersonViewImageLabelWidth = 42.f;
     [self constructCameraImageLabelView];
     [self constructInterestsImageLabelView];
     [self constructFriendsImageLabelView];
+    [self constructStatusLabel];
 }
 
 - (void)constructNameLabel {
     CGFloat leftPadding = 12.f;
-    CGFloat topPadding = 17.f;
+    CGFloat topPadding = -15.f;
     CGRect frame = CGRectMake(leftPadding,
                               topPadding,
                               floorf(CGRectGetWidth(_informationView.frame)/2),
-                              CGRectGetHeight(_informationView.frame) - topPadding);
+                              CGRectGetHeight(_informationView.frame));
     _nameLabel = [[UILabel alloc] initWithFrame:frame];
     _nameLabel.text = [NSString stringWithFormat:@"%@, %@", _person.name, @(_person.age)];
     [_informationView addSubview:_nameLabel];
@@ -114,6 +117,25 @@ static const CGFloat ChoosePersonViewImageLabelWidth = 42.f;
                                                        image:image
                                                         text:[@(_person.numberOfSharedFriends) stringValue]];
     [_informationView addSubview:_friendsImageLabelView];
+}
+
+- (void)constructStatusLabel {
+    CGFloat leftPadding = 12.f;
+    CGFloat topPadding = 10.f;
+    CGRect frame = CGRectMake(leftPadding,
+                              topPadding,
+                              floorf(CGRectGetWidth(_informationView.frame)),
+                              CGRectGetHeight(_informationView.frame));
+    NSString *preText = @"Going to ";
+    NSString *location = [preText stringByAppendingString:_person.location];
+    NSString *preText2 = @" ";
+    NSString *fromDate = [preText2 stringByAppendingString:_person.fromDate];
+    NSString *preText3 = @" to ";
+    NSString *toDate = [preText3 stringByAppendingString:_person.toDate];
+    _statusLabel = [[UILabel alloc] initWithFrame:frame];
+    _statusLabel.text = [location stringByAppendingString:[fromDate stringByAppendingString:toDate]];
+    _statusLabel.font = [UIFont systemFontOfSize:10];
+    [_informationView addSubview:_statusLabel];
 }
 
 - (ImageLabelView *)buildImageLabelViewLeftOf:(CGFloat)x image:(UIImage *)image text:(NSString *)text {

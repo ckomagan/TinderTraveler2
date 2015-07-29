@@ -15,8 +15,8 @@
 #import "MDCSwipeToChoose.h"
 #import <Foundation/Foundation.h>
 
-static const CGFloat ChoosePersonButtonHorizontalPadding = 80.f;
-static const CGFloat ChoosePersonButtonVerticalPadding = 20.f;
+static const CGFloat ChoosePersonButtonHorizontalPadding = 0.f;
+static const CGFloat ChoosePersonButtonVerticalPadding = -15.f;
 
 @interface MatchPageController ()
 @property (nonatomic, strong) NSMutableArray *people;
@@ -147,6 +147,9 @@ NSDictionary *res;
     [self.view addSubview:self.frontCardView];
     self.backCardView = [self popPersonViewWithFrame:[self backCardViewFrame]];
     [self.view insertSubview:self.backCardView belowSubview:self.frontCardView];
+    [self constructSettingsButton];
+    [self constructChatButton];
+    [self constructLikeMessageText];
     [self constructNopeButton];
     [self constructLikedButton];
 }
@@ -228,8 +231,8 @@ NSDictionary *res;
 
 - (CGRect)frontCardViewFrame {
     CGFloat horizontalPadding = 20.f;
-    CGFloat topPadding = 60.f;
-    CGFloat bottomPadding = 150.f;
+    CGFloat topPadding = 100.f;
+    CGFloat bottomPadding = 220.f;
     return CGRectMake(horizontalPadding,
                       topPadding,
                       CGRectGetWidth(self.view.frame) - (horizontalPadding * 2),
@@ -247,45 +250,96 @@ NSDictionary *res;
 - (CGRect)bottomCardViewFrame {
     CGRect frontFrame = [self frontCardViewFrame];
     return CGRectMake(frontFrame.origin.x,
-                      frontFrame.origin.y + 150.f,
+                      frontFrame.origin.y + 180.f,
                       CGRectGetWidth(frontFrame),
                       CGRectGetHeight(frontFrame));
 }
 
-- (void)constructNopeButton {
+- (void)constructLikeMessageText {
+    UILabel *statusLabel;
+    
+    CGFloat horizontalPadding = 80.f;
+    CGFloat topPadding = 0.f;
+    CGFloat bottomPadding = 410.f;
+    CGRect frame = CGRectMake(horizontalPadding,
+                      topPadding,
+                      CGRectGetWidth(self.view.frame) - horizontalPadding,
+                      CGRectGetHeight(self.view.frame) - bottomPadding);
+    
+    statusLabel = [[UILabel alloc] initWithFrame:frame];
+    statusLabel.text = @"She matches your goal";
+    statusLabel.font = [UIFont systemFontOfSize:16];
+    [self.view addSubview:statusLabel];
+}
+
+- (void)constructSettingsButton {
+    CGFloat horizontalPadding = 220.f;
     UIButton *button = [UIButton buttonWithType:UIButtonTypeRoundedRect];
-    UIImage *image = [UIImage imageNamed:@"nope"];
-    button.frame = CGRectMake(ChoosePersonButtonHorizontalPadding,
-                              CGRectGetMaxY(self.backCardView.frame) + ChoosePersonButtonVerticalPadding,
-                              image.size.width,
-                              image.size.height);
-    [button setImage:image forState:UIControlStateNormal];
-    [button setTintColor:[UIColor colorWithRed:247.f/255.f
-                                         green:91.f/255.f
-                                          blue:37.f/255.f
-                                         alpha:1.f]];
+    UIImage *image = [UIImage imageNamed:@"settings"];
+    [button setBackgroundImage:image forState:UIControlStateNormal];
+    button.frame = CGRectMake(CGRectGetMaxX(self.view.frame) - image.size.width + horizontalPadding,
+                              CGRectGetMaxY(self.backCardView.frame) - 390,
+                              image.size.width/14,
+                              image.size.height/14);
     [button addTarget:self
-               action:@selector(nopeFrontCardView)
+               action:@selector(settingsView)
+     forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:button];
+}
+
+- (void)constructChatButton {
+    CGFloat horizontalPadding = 190.f;
+    UIButton *button = [UIButton buttonWithType:UIButtonTypeRoundedRect];
+    UIImage *image = [UIImage imageNamed:@"chat"];
+    [button setBackgroundImage:image forState:UIControlStateNormal];
+    button.frame = CGRectMake(CGRectGetMaxX(self.view.frame) - image.size.width + horizontalPadding,
+                              CGRectGetMaxY(self.backCardView.frame) - 390,
+                              image.size.width/7,
+                              image.size.height/7);
+    [button addTarget:self
+               action:@selector(chatView)
      forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:button];
 }
 
 - (void)constructLikedButton {
     UIButton *button = [UIButton buttonWithType:UIButtonTypeRoundedRect];
-    UIImage *image = [UIImage imageNamed:@"liked"];
-    button.frame = CGRectMake(CGRectGetMaxX(self.view.frame) - image.size.width - ChoosePersonButtonHorizontalPadding,
-                              CGRectGetMaxY(self.backCardView.frame) + ChoosePersonButtonVerticalPadding,
-                              image.size.width,
-                              image.size.height);
-    [button setImage:image forState:UIControlStateNormal];
-    [button setTintColor:[UIColor colorWithRed:29.f/255.f
-                                         green:245.f/255.f
-                                          blue:106.f/255.f
-                                         alpha:1.f]];
+    UIImage *image = [UIImage imageNamed:@"like2"];
+    [button setBackgroundImage:image forState:UIControlStateNormal];
+    button.frame = CGRectMake(CGRectGetMaxX(self.view.frame) - image.size.width - ChoosePersonButtonHorizontalPadding + 237,
+                              CGRectGetMaxY(self.backCardView.frame) - ChoosePersonButtonVerticalPadding,
+                              image.size.width/5,
+                              image.size.height/5);
     [button addTarget:self
                action:@selector(likeFrontCardView)
      forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:button];
+}
+
+- (void)constructNopeButton {
+    UIButton *button = [UIButton buttonWithType:UIButtonTypeRoundedRect];
+    UIImage *image = [UIImage imageNamed:@"nope"];
+    [button setBackgroundImage:image forState:UIControlStateNormal];
+    button.frame = CGRectMake(CGRectGetMaxX(self.view.frame) - image.size.width - ChoosePersonButtonHorizontalPadding + 270,
+                              CGRectGetMaxY(self.backCardView.frame) - ChoosePersonButtonVerticalPadding,
+                              image.size.width/6,
+                              image.size.height/6);
+    [button addTarget:self
+               action:@selector(nopeFrontCardView)
+     forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:button];
+}
+
+- (void)settingsView {
+    SettingsController *settingsView = [[SettingsController alloc] initWithNibName:@"SettingsPage" bundle:nil];
+    settingsView.modalTransitionStyle = UIModalTransitionStyleFlipHorizontal;
+    [self presentViewController:settingsView animated:YES completion:nil];
+}
+
+- (void)chatView {
+    /*ChatController *chatView = [[SettingsController alloc] initWithNibName:@"SettingsController" bundle:nil];
+    settingsView.modalTransitionStyle = UIModalTransitionStyleFlipHorizontal;
+    [self presentViewController:settingsView animated:YES completion:nil];*/
 }
 
 - (void)nopeFrontCardView {

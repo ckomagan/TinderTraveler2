@@ -16,11 +16,7 @@ NSDictionary *res;
 
 - (void) viewDidLoad {
     
-    self.loginView.readPermissions = @[@"public_profile", @"email", @"user_friends", @"user_birthday", @"user_location"];
-    self.loginView.delegate = self;
-    self.responseData = [NSMutableData data];
-    [self.view addSubview:self.loginView];
-}
+    }
 
 - (void)loginViewFetchedUserInfo{
     if ([FBSDKAccessToken currentAccessToken])

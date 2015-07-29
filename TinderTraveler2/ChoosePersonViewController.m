@@ -26,8 +26,8 @@
 #import "Person.h"
 #import "MDCSwipeToChoose.h"
 
-static const CGFloat ChoosePersonButtonHorizontalPadding = 80.f;
-static const CGFloat ChoosePersonButtonVerticalPadding = 20.f;
+static const CGFloat ChoosePersonButtonHorizontalPadding = 40.f;
+static const CGFloat ChoosePersonButtonVerticalPadding = 60.f;
 
 @interface ChoosePersonViewController ()
 @property (nonatomic, strong) NSMutableArray *people;
@@ -193,8 +193,8 @@ static const CGFloat ChoosePersonButtonVerticalPadding = 20.f;
 
 - (CGRect)frontCardViewFrame {
     CGFloat horizontalPadding = 20.f;
-    CGFloat topPadding = 60.f;
-    CGFloat bottomPadding = 200.f;
+    CGFloat topPadding = 180.f;
+    CGFloat bottomPadding = 220.f;
     return CGRectMake(horizontalPadding,
                       topPadding,
                       CGRectGetWidth(self.view.frame) - (horizontalPadding * 2),
@@ -209,6 +209,14 @@ static const CGFloat ChoosePersonButtonVerticalPadding = 20.f;
                       CGRectGetHeight(frontFrame));
 }
 
+- (CGRect)statusTextFrame {
+    CGRect statusFrame = [self frontCardViewFrame];
+    return CGRectMake(statusFrame.origin.x,
+                      statusFrame.origin.y + 30.f,
+                      CGRectGetWidth(statusFrame),
+                      CGRectGetHeight(statusFrame));
+}
+
 // Create and add the "nope" button.
 - (void)constructNopeButton {
     UIButton *button = [UIButton buttonWithType:UIButtonTypeRoundedRect];
@@ -218,10 +226,10 @@ static const CGFloat ChoosePersonButtonVerticalPadding = 20.f;
                               image.size.width,
                               image.size.height);
     [button setImage:image forState:UIControlStateNormal];
-    [button setTintColor:[UIColor colorWithRed:247.f/255.f
+    /*[button setTintColor:[UIColor colorWithRed:247.f/255.f
                                          green:91.f/255.f
                                           blue:37.f/255.f
-                                         alpha:1.f]];
+                                         alpha:1.f]];*/
     [button addTarget:self
                action:@selector(nopeFrontCardView)
      forControlEvents:UIControlEventTouchUpInside];

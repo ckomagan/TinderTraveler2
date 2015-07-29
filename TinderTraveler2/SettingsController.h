@@ -12,9 +12,9 @@
 #import <UIKit/UIKit.h>
 
 @interface SettingsController : UIViewController <FBSDKLoginButtonDelegate>
-@property (weak, nonatomic) IBOutlet FBSDKLoginButton *loginView;
-@property (strong, nonatomic) IBOutlet FBSDKProfilePictureView *profilePictureView;
-//@property (strong, nonatomic) id<FBSDKGraphRequest> loggedInUser;
+
+@property (strong, nonatomic) IBOutlet UILabel *nameLabel;
+@property (strong, nonatomic) IBOutlet UILabel *locationLabel;
 @property (strong, nonatomic) NSString *objectID;
 @property (nonatomic) NSString *fbId;
 @property (nonatomic) NSString *emailId;

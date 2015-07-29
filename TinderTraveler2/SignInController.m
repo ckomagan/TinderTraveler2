@@ -20,6 +20,7 @@
 #import "MatchPageController.h"
 
 #import <FBSDKCoreKit/FBSDKCoreKit.h>
+#import <FBSDKLoginKit/FBSDKLoginKit.h>
 
 #import "SCSettings.h"
 
@@ -29,7 +30,7 @@
     BOOL _viewIsVisible;
 }
 
-#pragma mark - Object lifecycle
+#pragma mark - Object lifecycle`
 
 - (instancetype)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -51,18 +52,14 @@
     [super viewDidLoad];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(observeProfileChange:) name:FBSDKProfileDidChangeNotification object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(observeTokenChange:) name:FBSDKAccessTokenDidChangeNotification object:nil];
-    self.loginButton.readPermissions = @[@"public_profile", @"user_friends"];
-        // If there's already a cached token, read the profile information.
+    self.loginButton.readPermissions = @[@"public_profile", @"email", @"user_friends"];
     if ([FBSDKAccessToken currentAccessToken]) {
         [self observeProfileChange:nil];
         self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
         self.window.backgroundColor = [UIColor whiteColor];
         [self.window makeKeyAndVisible];
         self.window.rootViewController = [MatchPageController new];
-
     }
-    
-    
 }
 
 - (void)viewDidAppear:(BOOL)animated
@@ -72,8 +69,6 @@
     SCSettings *settings = [SCSettings defaultSettings];
     if (_viewDidAppear) {
         _viewIsVisible = YES;
-        
-        // reset
         settings.shouldSkipLogin = NO;
     } else {
         if (settings.shouldSkipLogin || [FBSDKAccessToken currentAccessToken]) {
@@ -144,8 +139,6 @@
     }
 }
 
-#pragma mark - Observations
-
 - (void)observeProfileChange:(NSNotification *)notfication {
     if ([FBSDKProfile currentProfile]) {
         NSString *title = [NSString stringWithFormat:@"continue as %@", [FBSDKProfile currentProfile].name];
@@ -159,6 +152,16 @@
     } else {
         [self observeProfileChange:nil];
     }
+}
+
+- (BOOL)application:(UIApplication *)application
+            openURL:(NSURL *)url
+  sourceApplication:(NSString *)sourceApplication
+         annotation:(id)annotation {
+    return [[FBSDKApplicationDelegate sharedInstance] application:application
+                                                          openURL:url
+                                                sourceApplication:sourceApplication
+                                                       annotation:annotation];
 }
 
 @end

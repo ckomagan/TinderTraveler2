@@ -37,34 +37,27 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="V2K-GI-rmm">
-                                <rect key="frame" x="103" y="395" width="134" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="continue as a guest">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                            </button>
-                            <view contentMode="scaleToFill" id="5FZ-gI-Qtj" userLabel="Logout Button" customClass="FBSDKLoginButton">
-                                <rect key="frame" x="73" y="453" width="208" height="46"/>
+                            <view contentMode="scaleToFill" id="5FZ-gI-Qtj" customClass="FBSDKLoginButton">
+                                <rect key="frame" x="56" y="412" width="208" height="46"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                <subviews>
-                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="We do not post anything on Facebook" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="lJe-fA-l5t">
-                                        <rect key="frame" x="13" y="25" width="293" height="21"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="10"/>
-                                        <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                             </view>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="We do not post anything on Facebook" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="lJe-fA-l5t">
+                                <rect key="frame" x="73" y="487" width="293" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <connections>
+                        <outlet property="loginButton" destination="5FZ-gI-Qtj" id="CPF-MG-TdT"/>
                         <outlet property="nameLabel" destination="Bfm-Op-Kgu" id="xaj-42-M2F"/>
-                        <outlet property="profilePictureView" destination="Ugj-Yj-mgm" id="6sh-DB-8xg"/>
+                        <outlet property="profilePictureView" destination="Ugj-Yj-mgm" id="u5a-xl-Vjz"/>
                         <outlet property="statusLabel" destination="a0A-h8-y9M" id="fyJ-05-3FI"/>
+                        <outlet property="view" destination="e20-3a-CfA" id="f8d-w5-bW7"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lwf-i9-HBR" userLabel="First Responder" sceneMemberID="firstResponder"/>

@@ -17,27 +17,19 @@
 {
     [FBSDKLoginButton class];
     [FBSDKProfilePictureView class];
-    return YES;
-}
+    return [[FBSDKApplicationDelegate sharedInstance] application:application
+                                    didFinishLaunchingWithOptions:launchOptions];
 
-/*
-- (BOOL)application:(UIApplication *)application
-            openURL:(NSURL *)url
-  sourceApplication:(NSString *)sourceApplication
-         annotation:(id)annotation {
-    
-    BOOL wasHandled = [FBAppCall handleOpenURL:url sourceApplication:sourceApplication];
-    return wasHandled;
 }
-*/
 
 - (BOOL)application:(UIApplication *)application
             openURL:(NSURL *)url
   sourceApplication:(NSString *)sourceApplication
          annotation:(id)annotation {
-    
-    BFURL *parsedUrl = [BFURL URLWithInboundURL:url sourceApplication:sourceApplication];
-    return parsedUrl;
+    return [[FBSDKApplicationDelegate sharedInstance] application:application
+                                                          openURL:url
+                                                sourceApplication:sourceApplication
+                                                       annotation:annotation];
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application
@@ -57,6 +49,7 @@
 
 - (void)applicationDidBecomeActive:(UIApplication *)application
 {
+    [FBSDKAppEvents activateApp];
     [FBSDKAccessToken currentAccessToken];
 }
 
